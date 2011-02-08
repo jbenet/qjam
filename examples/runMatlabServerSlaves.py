@@ -17,7 +17,7 @@ def runSlave(info, workernum):
     proc.wait()
     output = str(proc.stdout.readlines())
 
-    return 'WORKER %d DONE -----------------\n%s\n\n%s\n\n' %
+    return 'WORKER %d DONE -----------------\n%s\n\n%s\n\n' % \
       (int(workernum[0]), cmd, output)
 
   except Exception, e:
@@ -27,7 +27,7 @@ def runSlave(info, workernum):
     output = '%s\n\n%s' % (e, str(traceback.format_exception(exc_type,
       exc_value, exc_traceback)))
 
-    return 'WORKER %d FAILED -----------------\n%s\n\n%s\n\n' %
+    return 'WORKER %d FAILED -----------------\n%s\n\n%s\n\n' % \
       (int(workernum[0]), cmd, output)
 
 # QJAM functions:
